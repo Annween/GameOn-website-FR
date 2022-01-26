@@ -21,6 +21,16 @@ body {
   margin: 0 auto;
 }
 
+
+.error
+{
+  display: none;
+  color: red;
+  font-size: 14px;
+}
+
+
+
 p {
   margin-bottom: 0;
   padding: 0.5vw;
@@ -232,6 +242,7 @@ input[data-error]::after {
     font-size: 0.4em;
     color: red;
 } */
+
 .checkbox-label,
 .checkbox2-label {
   position: relative;
