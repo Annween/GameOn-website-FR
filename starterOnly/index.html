@@ -53,8 +53,7 @@
 
     </div>
 
-
-    <!-- Modale -->
+        <!-- Modale -->
     <div class="bground">
         <div class="content">
             <span class="close" onclick="closeModal()"></span>
@@ -63,12 +62,12 @@
                     <div class="formData">
                         <label for="first">Prénom</label><br>
                         <input class="text-control" type="text" id="first" name="first" /><br>
-                        <div id="nomError" class="error">Erreur : le champ doit contenir au moins 2 caractères</div>
+                        <div id="prenomError" class="error">Erreur : le champ doit contenir au moins 2 caractères</div>
                     </div>
                     <div class="formData">
                         <label for="last">Nom</label><br>
                         <input class="text-control" type="text" id="last" name="last" /><br>
-                        <div id="prenomError" class="error">Erreur : le champ doit contenir au moins 2 caractères</div>
+                        <div id="nomError" class="error">Erreur : le champ doit contenir au moins 2 caractères</div>
                     </div>
                     <div class="formData">
                         <label for="email">E-mail</label><br>
@@ -118,7 +117,7 @@
                     </div>
 
                     <div class="formData">
-                        <input class="checkbox-input" type="checkbox" id="checkbox1" checked required/>
+                        <input class="checkbox-input" type="checkbox" id="checkbox1"/>
                         <label class="checkbox2-label" for="checkbox1" >
                             <span class="checkbox-icon"></span>
                             J'ai lu et accepté les conditions d'utilisation.
@@ -132,11 +131,21 @@
                         </label>
                         <br>
                     </div>
-                    <input class="btn-submit" type="submit" class="button" value="C'est parti"/>
+                    <input id="button_sumit" class="btn-submit button" type="submit" value="C'est parti"/>
                 </form>
             </div>
         </div>
     </div>
+    <!---Modale remerciement inscription -->
+<div id="confirm">
+    <div class="content ok">
+        <span class="close" onclick="closeModal2()"></span>
+            <div class="modal-body">
+                <div class="confirm-message">Merci pour votre inscription</div>
+            </div>
+        <button class="close-modal" onclick="closeModal2()">Fermer</button>
+    </div>
+</div>
 </main>
 <footer>
     <p class="copyrights">

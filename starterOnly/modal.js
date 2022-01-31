@@ -12,6 +12,7 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
+const modal2 = document.querySelector("#confirm");
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -26,7 +27,13 @@ function closeModal() {
     modalbg.style.display = "none";
 }
 
-document.getElementById("modaleInscription").addEventListener("submit", function (e) {
+
+function closeModal2() {
+    document.getElementById('confirm').style.display = "none";
+}
+
+
+document.getElementById("button_sumit").addEventListener("click", function (e) {
 
     e.preventDefault();
     const email = document.getElementById('email');
@@ -95,10 +102,11 @@ document.getElementById("modaleInscription").addEventListener("submit", function
 
     // check if inputs are valid and submit
     if (isOk !== false) {
-        document.getElementById("modaleInscription").submit();
-        alert("Votre inscription a bien été prise en compte");
-    }
 
+        modalbg.style.display = "none";
+        document.getElementById("confirm").style.display = "block";
+
+    }
 })
 
 
