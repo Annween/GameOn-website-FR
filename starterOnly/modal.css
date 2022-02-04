@@ -560,6 +560,11 @@ footer {
     margin-top: 50px;
     text-align: center;
   }
+
+  #confirm .modal-body
+  {
+    padding: 100px 0;
+  }
 }
 
 @keyframes modalopen {
