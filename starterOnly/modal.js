@@ -32,30 +32,29 @@ function closeModal2() {
     document.getElementById('confirm').style.display = "none";
 }
 
+const email = document.getElementById('email');
+const prenom = document.getElementById('first');
+const nom = document.getElementById('last');
+const birthdate = document.getElementById('birthdate');
+const privacyConsent = document.getElementById('checkbox1');
+const quantity = document.getElementById('quantity');
+
+const nomError = document.getElementById('nomError');
+const prenomError = document.getElementById('prenomError');
+
+const birthdateError = document.getElementById('birthdateError');
+
+const consentError = document.getElementById('consentError');
+
+const checkBoxError = document.getElementById('checkBoxError');
+
+const emailError = document.getElementById('emailError');
+
+const quantityError = document.getElementById('quantityError');
 
 document.getElementById("button_sumit").addEventListener("click", function (e) {
 
     e.preventDefault();
-    const email = document.getElementById('email');
-    const prenom = document.getElementById('first');
-    const nom = document.getElementById('last');
-    const birthdate = document.getElementById('birthdate');
-    const privacyConsent = document.getElementById('checkbox1');
-    const quantity = document.getElementById('quantity');
-
-    const nomError = document.getElementById('nomError');
-    const prenomError = document.getElementById('prenomError');
-
-    const birthdateError = document.getElementById('birthdateError');
-
-    const consentError = document.getElementById('consentError');
-
-    const checkBoxError = document.getElementById('checkBoxError');
-
-    const emailError = document.getElementById('emailError');
-
-    const quantityError = document.getElementById('quantityError');
-
 
     let isOk = true;
 
@@ -64,48 +63,67 @@ document.getElementById("button_sumit").addEventListener("click", function (e) {
         prenomError.style.display = "block";
         isOk = false;
 
+    }else
+    {
+        prenomError.style.display = "none";
     }
     if (nom.value.length < 2) // check
     {
         nomError.style.display = "block";
         isOk = false;
 
+    } else
+    {
+        nomError.style.display = "none";
     }
 
     if (validateEmail(email.value) === false) {
         emailError.style.display = "block";
         isOk = false;
+    } else
+    {
+        emailError.style.display = "none";
     }
 
     if (birthdate.value === '') {
         birthdateError.style.display = "block";
         isOk = false;
 
+    } else
+    {
+        birthdateError.style.display = "none";
     }
 
     if (quantity.value === '') {
         quantityError.style.display = "block";
         isOk = false;
+    } else
+    {
+        quantityError.style.display = "none";
     }
 
     // check if CGU checkbox is checked
     if (privacyConsent.checked === false) {
         consentError.style.display = "block";
         isOk = false;
+    } else
+    {
+        consentError.style.display = "none";
     }
 
     // get all location radio inputs and checks if at least one is checked
     if (document.querySelectorAll('input[name="location"]:checked').length < 1) {
         checkBoxError.style.display = "block";
         isOk = false;
+    } else
+    {
+        checkBoxError.style.display = "none";
     }
 
     // check if inputs are valid and submit
     if (isOk !== false) {
-
-        modalbg.style.display = "none";
+       modalbg.style.display = 'none';
         document.getElementById("confirm").style.display = "block";
-
     }
 })
 
